@@ -24,7 +24,7 @@ export default function FinalScreen() {
             duration: 1.2,
             ease: 'easeOut',
             onUpdate(value) {
-                setDisplayScore(Math.round(value.toFixed(2)))
+                setDisplayScore(Number(parseFloat(value).toFixed(2)))
             }
         })
 

@@ -54,7 +54,7 @@ export default function ResultScreen() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
             style={{ fontSize: '36px', letterSpacing: '2px' }}
-        >{displayScore.toFixed(1)} / 10</motion.div>
+        >{displayScore.toFixed(2)} / 10</motion.div>
 
         <Button onClick={nextRound}>
             {state.roundIndex === 4 ? 'FINISH' : 'NEXT'}

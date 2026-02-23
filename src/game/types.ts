@@ -12,7 +12,7 @@ export type Round = {
 
 export type Phase = 'start' | 'memorize' | 'guess' | 'result' | 'final'
 
-export type GameState ={
+export type GameState = {
     phase: Phase
     rounds: Round[]
     roundIndex: number

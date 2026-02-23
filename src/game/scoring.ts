@@ -1,13 +1,18 @@
 import type { HSL } from './types'
+import { deltaE2000, hslToRgb, rgbToXyz, xyzToLab } from './utils'
 
 export function calculateScore(target: HSL, guess: HSL): number {
-    const dh = Math.abs(target.h - guess.h) / 360
-    const ds = Math.abs(target.s - guess.s) / 100
-    const dl = Math.abs(target.l - guess.l) / 100
+    const rgb1 = hslToRgb(target)
+    const xyz1 = rgbToXyz(rgb1.r, rgb1.g, rgb1.b)
+    const lab1 = xyzToLab(xyz1.x, xyz1.y, xyz1.z)
 
-    const diff = Math.sqrt(dh * dh + ds * ds + dl * dl)
-    const score = Math.max(0, 10 - diff * 10)
-    return Math.round(score * 10) / 10
+    const rgb2 = hslToRgb(guess)
+    const xyz2 = rgbToXyz(rgb2.r, rgb2.g, rgb2.b)
+    const lab2 = xyzToLab(xyz2.x, xyz2.y, xyz2.z)
+
+    const distance = deltaE2000(lab1, lab2)
+    const score = 10 - (distance / 30) * 10
+    return Math.max(0, Math.min(10, Number(score.toFixed(2))))
 }
 
 export function getGrade(progress: number): string {
