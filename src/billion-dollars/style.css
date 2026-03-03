@@ -1,0 +1,7 @@
+body {
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    overflow: hidden;
+}

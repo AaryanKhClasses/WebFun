@@ -11,9 +11,9 @@ export default function GraphPanel() {
                 <XAxis dataKey='tick' />
                 <YAxis domain={[0, 100]} />
                 <Tooltip />
-                <Line type='monotone' dataKey='Economy' stroke='#22c55e' />
-                <Line type='monotone' dataKey='Stability' stroke='#3b82f6' />
-                <Line type='monotone' dataKey='Sentiment' stroke='#f59e0b' />
+                <Line type='monotone' dataKey='economy' stroke='#22c55e' />
+                <Line type='monotone' dataKey='stability' stroke='#3b82f6' />
+                <Line type='monotone' dataKey='sentiment' stroke='#f59e0b' />
             </LineChart>
         </ResponsiveContainer>
     </div>

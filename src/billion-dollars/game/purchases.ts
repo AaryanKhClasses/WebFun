@@ -1,3 +1,4 @@
+import addNews from './news'
 import type { Purchase } from './types'
 
 const purchases: Purchase[] = [
@@ -10,7 +11,7 @@ const purchases: Purchase[] = [
             world.housingSupply -= 25
             world.economy += 5
             world.publicSentiment -= 10
-            world.news.push('Housing market tightens after large acquisition.')
+            addNews(world, 'Housing market tightens after large acquisition.', 'general')
         }
     },
     {
@@ -22,7 +23,7 @@ const purchases: Purchase[] = [
             world.foodSupply -= 30
             world.economy += 10
             world.publicSentiment -= 15
-            world.news.push('Food prices rise as farmland is consolidated under one owner.')
+            addNews(world, 'Food prices rise as farmland is consolidated under one owner.', 'economy')
         }
     },
     {
@@ -34,7 +35,7 @@ const purchases: Purchase[] = [
             world.economy += 20
             world.environment -= 25
             world.publicSentiment -= 20
-            world.news.push('Industrial growth surges, but environmental concerns grow.')
+            addNews(world, 'Industrial growth surges, but environmental concerns grow.', 'environment')
         }
     },
     {
@@ -46,7 +47,7 @@ const purchases: Purchase[] = [
             world.housingSupply += 20
             world.economy += 5
             world.publicSentiment += 10
-            world.news.push('Affordable housing initiatives help ease the housing crisis.')
+            addNews(world, 'Affordable housing initiatives help ease the housing crisis.', 'general')
         }
     },
     {
@@ -58,7 +59,7 @@ const purchases: Purchase[] = [
             world.environment += 20
             world.economy -= 10
             world.publicSentiment += 15
-            world.news.push('Renewable energy investments boost the environment and public sentiment, but at a cost to the economy.')
+            addNews(world, 'Renewable energy investments boost the environment and public sentiment, but at a cost to the economy.', 'environment')
         }
     },
     {
@@ -70,7 +71,7 @@ const purchases: Purchase[] = [
             world.environment -= 10
             world.publicSentiment += 20
             world.economy -= 5
-            world.news.push('New parks provide green space and improve public sentiment, but at a cost to the economy.')
+            addNews(world, 'New parks provide green space and improve public sentiment, but at a cost to the economy.', 'environment')
         }
     },
     {
@@ -81,7 +82,7 @@ const purchases: Purchase[] = [
         effect: (world) => {
             world.economy += 15
             world.publicSentiment += 20
-            world.news.push('Education investments lead to a more skilled workforce and improved public sentiment.')
+            addNews(world, 'Education investments lead to a more skilled workforce and improved public sentiment.', 'economy')
         }
     }
 ]
