@@ -38,10 +38,9 @@ export default function Home() {
             border: '1px solid rgba(255, 255, 255, 0.2)'
         }} />
         <div style={{
-            display: 'flex',
-            flexDirection: 'row',
+            display: 'grid',
+            gridTemplateColumns: 'auto auto auto',
             gap: '24px',
-            flexWrap: 'wrap',
             justifyContent: 'center'
         }}>
             <motion.img
@@ -51,11 +50,13 @@ export default function Home() {
                 style={{
                     borderRadius: '8px',
                     cursor: 'pointer',
-                    userSelect: 'none'
+                    userSelect: 'none',
+                    border: '2px solid rgba(255, 255, 255, 0.1)'
                 }}
                 src='/color-io.png'
                 alt='Color.IO Logo'
                 width={360}
+                height={150}
                 onClick={() => window.location.href = '/color-io'}
             />
             <motion.img
@@ -65,11 +66,13 @@ export default function Home() {
                 style={{
                     borderRadius: '8px',
                     cursor: 'pointer',
-                    userSelect: 'none'
+                    userSelect: 'none',
+                    border: '2px solid rgba(255, 255, 255, 0.1)'
                 }}
                 src='/reaction-test.png'
                 alt='Reaction Test Logo'
                 width={360}
+                height={150}
                 onClick={() => window.location.href = '/reaction-test'}
             />
             <motion.img
@@ -79,12 +82,30 @@ export default function Home() {
                 style={{
                     borderRadius: '8px',
                     cursor: 'pointer',
-                    userSelect: 'none'
+                    userSelect: 'none',
+                    border: '2px solid rgba(255, 255, 255, 0.1)'
                 }}
                 src='/billion-dollars.png'
                 alt='Billion Dollars Logo'
                 width={360}
+                height={150}
                 onClick={() => window.location.href = '/billion-dollars'}
+            />
+            <motion.img
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 }}
+                style={{
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    userSelect: 'none',
+                    border: '2px solid rgba(255, 255, 255, 0.1)'
+                }}
+                src='/illusion.png'
+                alt='Illusion Logo'
+                width={360}
+                height={150}
+                onClick={() => window.location.href = '/illusion'}
             />
         </div>
     </motion.div>

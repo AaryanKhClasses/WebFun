@@ -3,6 +3,7 @@ import Home from './Home'
 import ColorIO from './color-io/App'
 import ReactionTest from './reaction-test/App'
 import BillionDollars from './billion-dollars/App'
+import Illusion from './illusion/App'
 
 export default function App() {
     return <Routes>
@@ -10,5 +11,6 @@ export default function App() {
         <Route path='/color-io' element={<ColorIO />} />
         <Route path='/reaction-test' element={<ReactionTest />} />
         <Route path='/billion-dollars' element={<BillionDollars />} />
+        <Route path='/illusion' element={<Illusion />} />
     </Routes>
 }
