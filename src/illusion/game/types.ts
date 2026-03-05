@@ -15,6 +15,10 @@ export type GameState = {
     current: number
     fooledCount: number
     answers: boolean[]
+    startTime: number | null
+    elapsed: number
+    startGame: () => void
+    tick: () => void
     next: (fooled: boolean) => void
     reset: () => void
 }

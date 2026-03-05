@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function Result({ onRestart }: PageProps) {
     const fooled = useGameStore(s => s.fooledCount)
+    const timeElapsed = useGameStore(s => s.elapsed)
 
     return <motion.div
         initial={{ opacity: 0 }}
@@ -31,6 +32,11 @@ export default function Result({ onRestart }: PageProps) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
         >You were fooled by <b>{fooled}</b> illusion(s)!</motion.p>
+        <motion.p
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4 }}
+        >Time Spent: <b>{Math.floor(timeElapsed / 1000)}s</b></motion.p>
         <motion.button
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

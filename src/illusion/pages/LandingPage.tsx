@@ -4,9 +4,11 @@ import { motion } from 'framer-motion'
 
 export default function Landing({ onStart }: PageProps) {
     const reset = useGameStore(s => s.reset)
+    const startGame = useGameStore(s => s.startGame)
 
     const start = () => {
         reset()
+        startGame()
         onStart!()
     }
 

@@ -2,6 +2,8 @@ import illusions from '../game/illusions'
 import useGameStore from '../game/store'
 import type { PageProps } from '../game/types'
 import { motion } from 'framer-motion'
+import GameTimer from '../ui/GameTimer'
+import ProgressBar from '../ui/ProgressBar'
 
 export default function Game({ onFinish }: PageProps) {
     const current = useGameStore(s => s.current)
@@ -35,6 +37,8 @@ export default function Game({ onFinish }: PageProps) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
         >{illusion.title}</motion.h1>
+        <GameTimer />
+        <ProgressBar />
         <Component onAnswer={next} />
     </motion.div>
 }

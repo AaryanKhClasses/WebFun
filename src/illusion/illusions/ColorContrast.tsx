@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { IllusionComponentProps } from '../game/types'
 import { motion } from 'framer-motion'
+import ResultSplash from '../ui/ResultSplash'
 
 function generateColorPair() {
     const hue = Math.floor(Math.random() * 360)
@@ -35,13 +36,15 @@ function generateColorPair() {
 }
 
 export default function ColorContrastIllusion({ onAnswer }: IllusionComponentProps) {
-    const [pair] = useState(generateColorPair())
+    const [pair] = useState(generateColorPair)
     const [revealed, setRevealed] = useState(false)
+    const [fooled, setFooled] = useState(false)
 
     const choose = (side: 'left' | 'right') => {
+        const result = side !== pair.correct
+        setFooled(result)
         setRevealed(true)
-        const fooled = side !== pair.correct
-        setTimeout(() => onAnswer(fooled), 2000)
+        setTimeout(() => onAnswer(result), 2000)
     }
 
     return <motion.div
@@ -118,5 +121,6 @@ export default function ColorContrastIllusion({ onAnswer }: IllusionComponentPro
         >
             <p style={{ marginTop: 20 }}>The correct answer was on the {pair.correct}!</p>
         </motion.div>}
+        <ResultSplash show={revealed} fooled={!!fooled} />
     </motion.div>
 }
