@@ -3,6 +3,7 @@ import type { Screen } from './game/types'
 import Landing from './pages/LandingPage'
 import Game from './pages/GamePage'
 import Result from './pages/ResultPage'
+import './style.css'
 
 export default function Illusion() {
     const [screen, setScreen] = useState<Screen>('landing')
