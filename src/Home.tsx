@@ -107,6 +107,22 @@ export default function Home() {
                 height={150}
                 onClick={() => window.location.href = '/illusion'}
             />
+            <motion.img
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 }}
+                style={{
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    userSelect: 'none',
+                    border: '2px solid rgba(255, 255, 255, 0.1)'
+                }}
+                src='/pachinko.png'
+                alt='Pachinko Logo'
+                width={360}
+                height={150}
+                onClick={() => window.location.href = '/pachinko'}
+            />
         </div>
     </motion.div>
 }
