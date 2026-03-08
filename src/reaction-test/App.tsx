@@ -34,7 +34,7 @@ export default function ReactionTest() {
     }
 
     const tooEarly = () => {
-        if (timeoutRef.current) clearTimeout(timeoutRef.current)
+        if(timeoutRef.current) clearTimeout(timeoutRef.current)
         setState('too-early')
     }
 

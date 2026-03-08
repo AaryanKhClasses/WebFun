@@ -10,7 +10,7 @@ export default function Game({ onFinish }: PageProps) {
     const next = useGameStore(s => s.next)
 
     const illusion = illusions[current]
-    if (!illusion) {
+    if(!illusion) {
         onFinish!()
         return null
     }
