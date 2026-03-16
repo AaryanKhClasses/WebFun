@@ -5,6 +5,7 @@ import ReactionTest from './reaction-test/App'
 import BillionDollars from './billion-dollars/App'
 import Illusion from './illusion/App'
 import Pachinko from './pachinko/App'
+import QTE from './qte/App'
 
 export default function App() {
     return <Routes>
@@ -14,5 +15,6 @@ export default function App() {
         <Route path='/billion-dollars' element={<BillionDollars />} />
         <Route path='/illusion' element={<Illusion />} />
         <Route path='/pachinko' element={<Pachinko />} />
+        <Route path='/qte' element={<QTE />} />
     </Routes>
 }
